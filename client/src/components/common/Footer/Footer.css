@@ -1,0 +1,36 @@
+/* Footer.css */
+.footer {
+    background-color: #34495e; /* Change the background color as per your design */
+    color: #ecf0f1; /* Change the font color */
+    padding: 40px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer h4 {
+    color: #ffffff; /* Change the font color for headings */
+  }
+  
+  .footer p {
+    color: #bdc3c7; /* Change the font color for paragraphs */
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #ecf0f1; /* Change the color of social icons */
+  }
+  
+  /* Add more styles as needed */
+  

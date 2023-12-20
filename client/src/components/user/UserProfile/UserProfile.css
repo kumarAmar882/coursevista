@@ -1,0 +1,37 @@
+/* UserProfile.css */
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .avatar-container {
+    margin-right: 20px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff; /* Add a border around the avatar */
+  }
+  
+  .user-details {
+    flex-grow: 1;
+  }
+  
+  h2 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .email {
+    margin-top: 5px;
+    color: #666;
+  }
+  

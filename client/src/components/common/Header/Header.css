@@ -1,0 +1,19 @@
+/* Header.css */
+.custom-navbar {
+    background-color: #2c3e50; /* Change the background color as per your design */
+  }
+  
+  .navbar-dark .navbar-nav .nav-link {
+    color: #ecf0f1; /* Change the font color for normal links */
+  }
+  
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #3498db; /* Change the font color for links on hover */
+  }
+  
+  .navbar-dark .navbar-toggler-icon {
+    background-color: #ecf0f1; /* Change the color of the mobile menu icon */
+  }
+  
+  /* Add more styles as needed */
+  
