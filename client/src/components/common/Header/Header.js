@@ -8,6 +8,7 @@ const NavBar = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState('login');
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(null);
 
   const handleModalClose = () => {
     setShowModal(false);
@@ -22,8 +23,10 @@ const NavBar = () => {
   const handleLogin = async (formData) => {
     setLoading(true);
     try {
+      console.log("formdaata",formData);
       const userData = await AuthService.login(formData);
       console.log('Login successful:', userData);
+      setUser(userData);
     } catch (error) {
       console.error('Error during login:', error.message);
       // Handle login error if needed
@@ -103,9 +106,18 @@ const NavBar = () => {
               </NavDropdown>
             </Nav>
             <Nav className="ml-auto">
-              <Button variant="outline-light" onClick={() => handleModalShow('login')}>
-                Login
-              </Button>
+            {user ? (
+                // Display user profile if user is logged in
+                <NavDropdown title={user.username} id="basic-nav-dropdown">
+                  <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="#logout">Logout</NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                // Display login button if user is not logged in
+                <Button variant="outline-light" onClick={() => handleModalShow('login')}>
+                  Login
+                </Button>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

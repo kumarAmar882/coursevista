@@ -101,7 +101,7 @@ const UserController = {
       }
 
       const { usernameOrEmail, password } = req.body;
-     // console.log(usernameOrEmail);
+      console.log(usernameOrEmail);
 
       if (!usernameOrEmail) {
         return res.status(400).json({ error: 'Username or email is required' });

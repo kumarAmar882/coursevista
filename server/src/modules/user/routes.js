@@ -1,6 +1,6 @@
 // src/modules/user/routes.js
 const express = require('express');
-const { body, oneOf } = require('express-validator');
+const { body } = require('express-validator');
 const UserController = require('./controller');
 
 const router = express.Router();
@@ -19,13 +19,7 @@ router.post(
 router.post(
   '/login',
   [
-    oneOf(
-      [
-        body('username').trim().notEmpty().withMessage('Username is required'),
-        body('email').trim().notEmpty().withMessage('Email is required').bail().isEmail().withMessage('Invalid email format'),
-      ],
-      'Please provide either a username or an email'
-    ),
+    body('usernameOrEmail').trim().notEmpty().withMessage('Username or email is required'),
     body('password').notEmpty().withMessage('Password is required'),
   ],
   UserController.login

@@ -2,7 +2,7 @@ class AuthService {
   static async login(credentials) {
     try {
       const { username, email, password } = credentials;
-      const usernameOrEmail = username || email; // Use either username or email, not both
+      const usernameOrEmail = username ? username : email; // Use either username or email, not both
   
       const response = await fetch('http://localhost:3001/api/login', {
         method: 'POST',
@@ -16,6 +16,9 @@ class AuthService {
       });
   
       if (!response.ok) {
+        const responseBody = await response.json();
+        console.error('Login failed. Server response:', response);
+        console.error('Server response body:', responseBody);
         throw new Error('Invalid credentials');
       }
   
